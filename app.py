@@ -17,7 +17,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    return render_template("base.html")
 
 @app.route('/juegos')
 def juegos():
@@ -27,4 +27,4 @@ def juegos():
 
 #port=os.environ["PORT"]
 #app.run("0.0.0.0",int(port),debug=True)
-app.run("0.0.0.0" ,debug=False)
+app.run("0.0.0.0" ,debug=True)

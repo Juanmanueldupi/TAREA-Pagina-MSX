@@ -8,12 +8,15 @@ Licence URI: http://www.os-templates.com/template-terms
 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-{%block tittle%}<title>MSX</title>{%endblock%}
+{%block tittle%}
+<title>MSX</title>
+{%endblock%}
+{%block css%}
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<link rel="stylesheet" href="./static/layout.css" type="text/css" />
-<script type="text/javascript" src="./static/scripts/jquery.min.js"></script>
+<link rel="stylesheet" href="{{url_for('static', filename='layout.css')}}" />
+<script type="text/javascript" src="../static/scripts/jquery.min.js"></script>
 <!-- Featured Slider  -->
-<script type="text/javascript" src="layout/scripts/jquery-s3slider.js"></script>
+<script type="text/javascript" src="../static/scripts/jquery-s3slider.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
 	$("#featured_slide_").s3Slider({
@@ -21,9 +24,11 @@ $(document).ready(function() {
 	});
 });
 </script>
+{%endblock%}
 <!-- / Featured Slider -->
 </head>
 <body id="top">
+<!--{%block menu%}
 <div class="wrapper row1">
   <div id="topnav">
     <ul>
@@ -38,39 +43,35 @@ $(document).ready(function() {
     </ul>
   </div>
 </div>
+{%endblock%}-->
 <!-- ####################################################################################################### -->
 <div class="wrapper row2">
-  {%block titulo%}<div id="header" class="clear">
+  {%block titulo%}
+  <div id="header" class="clear">
     <div class="fl_left">
       <h1><a href="index.html">MSX</a></h1>
       <p>Disfruta de los mejores juegos</p>
-    </div>{%endblock%}
+    </div>
   </div>
+  {%endblock%}
 </div>
 <!-- ####################################################################################################### -->
+{%block contenido%} 
 <div class="wrapper row3">
   <div id="featured_slide_">
     <ul id="featured_slide_Content">
-      <li class="featured_slide_Image"><a href="./index.html"><img src="images/demo/MSX-Logo.png" alt="" /></a>
+      <li class="featured_slide_Image"><a href="./index.html"><img style="background-image: url('../static/images/demo/MSX-Logo.png')" alt="" /></a>
       </li>
     </ul>
   </div>
+  <br>
+  <p></p>
+</div>
+{%endblock%}
 <!-- ####################################################################################################### -->
 <div class="wrapper">
   <div id="footer" class="clear"> 
     <!-- ####################################################################################################### -->
-    <div class="fl_right">
-      <div id="social" class="clear">
-        <p>Stay Up to Date With Whats Happening</p>
-        <ul>
-          <li><a style="background-position:0 0;" href="#">Twitter</a></li>
-          <li><a style="background-position:-72px 0;" href="#">LinkedIn</a></li>
-          <li><a style="background-position:-142px 0;" href="#">Facebook</a></li>
-          <li><a style="background-position:-212px 0;" href="#">Flickr</a></li>
-          <li><a style="background-position:-282px 0;" href="#">RSS</a></li>
-        </ul>
-      </div>
-    </div>
     <div id="copyright" class="clear">
       <p class="fl_left">Copyright &copy; 2022 - All Rights Reserved - <a href="#">Juan Manuel Duran Pinero</a></p>
       <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
