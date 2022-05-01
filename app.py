@@ -11,17 +11,28 @@ def LeerLibreria():
     except:
         print("Error al leer el fichero")
 
-libros=LeerLibreria()
+msxjuegos=LeerLibreria()
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template("base.html")
+    return render_template("index.html")
 
 @app.route('/juegos')
 def juegos():
     return render_template("juegos.html")
+
+@app.route('/juegos', methods=['POST'])
+def juegos_post():
+    libreria = []
+    buscadorjuegos = request.form['juego']
+    for juego in msxjuegos:
+        nombre= str(juego.get("nombre"))
+        if nombre.startswith(str(buscadorjuegos)):
+            dict={"nombre":juego.get("nombre"),"desarrollador":juego.get("desarrollador"),"id":juego.get("id")}
+            libreria.append(dict)
+    return render_template("listajuegos.html", msxjuegos=libreria , buscadorjuegos=buscadorjuegos)
 
 
 
