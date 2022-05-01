@@ -1,0 +1,25 @@
+{%extends "base.html" %}
+{%block tittle%}Juegos{%endblock%}
+{%block titulo%}
+  <div id="header" class="clear">
+    <div class="fl_left">
+      <h1><a href="/">Juegos</a></h1>
+      <p>Disfruta de los mejores juegos</p>
+    </div>
+  </div>
+{%endblock%}
+{%block contenido%}
+<div class="wrapper row5">
+    <div id="container" class="clear"> 
+        <div class="posts">
+            <p>
+                <form method="post" action="/juegos">
+                    <p>Puedes introducir un videojuego o pulsar buscar para mostrarlos todos</p>
+                    <label>Introduce el nombre de un juego: </label>
+                    <input type="text" name="juego" value="" size="50"/>
+                    <input type="submit" value="Buscar"/> 
+                </form>
+            </p>
+        </div>
+    </div>
+{%endblock%}
