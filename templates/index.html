@@ -1,0 +1,81 @@
+<!DOCTYPE html >
+<!--
+Template Name: Educational Theory
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>{%block tittle%}MSX{%endblock%}</title>
+{%block css%}
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" href="{{url_for('static', filename='layout.css')}}" />
+<script type="text/javascript" src="../static/scripts/jquery.min.js"></script>
+<!-- Featured Slider  -->
+<script type="text/javascript" src="../static/scripts/jquery-s3slider.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#featured_slide_").s3Slider({
+		timeOut:10000 
+	});
+});
+</script>
+{%endblock%}
+<!-- / Featured Slider -->
+</head>
+<body id="top">
+<!--{%block menu%}
+<div class="wrapper row1">
+  <div id="topnav">
+    <ul>
+      <li class="active"><a href="index.html"><strong>Home</strong></a></li>
+      <li><a href="pages/style-demo.html"><strong>Style Demo</strong></a></li>
+      <li><a href="pages/full-width.html"><strong>Full Width</strong></a></li>
+      <li><a href="pages/3-columns.html"><strong>3 Columns</strong></a></li>
+      <li><a href="pages/portfolio.html"><strong>Portfolio</strong></a></li>
+      <li><a href="pages/gallery.html"><strong>Gallery</strong></a></li>
+      <li><a href="#"><strong>This a very long link</strong></a></li>
+      <li class="last"><a href="#"><strong>This is the last</strong></a></li>
+    </ul>
+  </div>
+</div>
+{%endblock%}-->
+<!-- ####################################################################################################### -->
+<div class="wrapper row2">
+  {%block titulo%}
+  <div id="header" class="clear">
+    <div class="fl_left">
+      <h1><a href="/">MSX</a></h1>
+      <p>Disfruta de los mejores juegos</p>
+    </div>
+  </div>
+  {%endblock%}
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper row3">
+  <div id="featured_slide_">
+    {%block contenido%} 
+    <ul id="featured_slide_Content">
+      <li class="featured_slide_Image"><a href="/juegos"><img style="background-image: url('../static/images/demo/MSX-Logo.png')" alt="" /></a>
+      </li>
+    </ul>
+    {%endblock%}
+  </div>
+  <br>
+  <p></p>
+</div>
+<!-- ####################################################################################################### -->
+<div class="wrapper">
+  <div id="footer" class="clear"> 
+    <!-- ####################################################################################################### -->
+    <div id="copyright" class="clear">
+      <p class="fl_left">Copyright &copy; 2022 - All Rights Reserved - <a href="#">Juan Manuel Duran Pinero</a></p>
+      <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+    </div>
+    <!-- ####################################################################################################### --> 
+  </div>
+</div>
+</body>
+</html>
