@@ -1,0 +1,38 @@
+{%extends "base.html" %}
+{%block tittle%}Listado{%endblock%}
+{%block titulo%}
+  <div id="header" class="clear">
+    <div class="fl_left">
+      <h1><a href="/">Listado de Juegos</a></h1>
+      <p>Disfruta de los mejores juegos</p>
+    </div>
+  </div>
+  {%endblock%}
+{% block contenido %}
+<div class="wrapper row5">
+    <div id="container" class="clear"> 
+        <div class="posts">
+            <p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Desarrollador</th>
+                            <th>Detalles</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for juego in msxjuegos: -%}
+                            <tr>
+                                <td>{{juego.get("nombre")}}</td>
+                                <td>{{juego.get("desarrollador")}}</td>
+                                <td><a href='juego/{{juego.get("id")}}'>Detalles</a></td>
+                            </tr>
+                        {% endfor -%}
+                    </tbody>
+                </table>
+            </p>
+        </div>
+    </div>
+</div>
+        {% endblock %}
