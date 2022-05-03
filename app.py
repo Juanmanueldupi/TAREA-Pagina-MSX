@@ -23,16 +23,23 @@ def index():
 def juegos():
     return render_template("juegos.html")
 
-@app.route('/juegos', methods=['POST'])
-def juegos_post():
+@app.route('/juegos',methods=["POST"])
+def listajuegos():
     libreria = []
-    buscadorjuegos = request.form['juego']
+    buscadorjuegos=request.form['juego']
     for juego in msxjuegos:
-        nombre= str(juego.get("nombre"))
+        nombre = str(juego.get("nombre"))
         if nombre.startswith(str(buscadorjuegos)):
             dict={"nombre":juego.get("nombre"),"desarrollador":juego.get("desarrollador"),"id":juego.get("id")}
-            libreria.append(dict)
-    return render_template("listajuegos.html", msxjuegos=libreria , buscadorjuegos=buscadorjuegos)
+            libreria.append(dict)            
+    return render_template("listajuegos.html", msxjuegos=libreria,buscadorjuegos=buscadorjuegos)
+
+@app.route('/juego/<id>')
+def juego(id):
+    for juego in msxjuegos:
+        if juego.get("id") == int(id):
+            return render_template("juego.html",juego=juego)
+    abort(404)
 
 
 
