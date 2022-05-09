@@ -21,7 +21,11 @@ def index():
 
 @app.route('/juegos')
 def juegos():
-    return render_template("juegos.html")
+    listacategorias=[]
+    for juego in msxjuegos:
+        if juego["categoria"] not in listacategorias:
+            listacategorias.append(juego["categoria"])
+    return render_template("juegos.html", listacategorias=listacategorias)
 
 @app.route('/juegos',methods=["POST"])
 def listajuegos():
@@ -43,6 +47,6 @@ def juego(id):
 
 
 
-port=os.environ["PORT"]
-app.run("0.0.0.0",int(port),debug=True)
-#app.run("0.0.0.0" ,debug=True)
+#port=os.environ["PORT"]
+#app.run("0.0.0.0",int(port),debug=True)
+app.run("0.0.0.0" ,debug=True)

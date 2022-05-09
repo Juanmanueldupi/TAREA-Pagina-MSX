@@ -15,7 +15,12 @@
             <p>
                 <form method="post" action="/juegos">
                     <label>Introduce el nombre de un juego: </label>
-                    <input type="text" name="juego" value="" size="50"/>
+                    <input type="text" name="juego" size="50"/>
+                    <select name="categoria">
+                      {% for categoria in listacategorias -%}
+                        <option value="{{ categoria}}">{{ categoria }}</option>
+                      {% endfor %}
+                    </select>
                     <input type="submit" value="Buscar"/> 
                     <p>Puedes introducir un videojuego o pulsar buscar para mostrarlos todos</p>
                 </form>
