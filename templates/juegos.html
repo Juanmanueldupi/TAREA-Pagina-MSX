@@ -18,11 +18,11 @@
                     <input type="text" name="juego" size="50"/>
                     <select name="categoria">
                       {% for categoria in listacategorias -%}
-                        <option value="{{ categoria}}">{{ categoria }}</option>
+                        <option value="{{categoria}}">{{categoria}}</option>
                       {% endfor %}
                     </select>
                     <input type="submit" value="Buscar"/> 
-                    <p>Puedes introducir un videojuego o pulsar buscar para mostrarlos todos</p>
+                    <p>Puedes introducir un videojuego o pulsar buscar para mostrarlos todos según su categoría</p>
                 </form>
             </p>
         </div>
