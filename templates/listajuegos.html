@@ -13,6 +13,21 @@
     <div id="container" class="clear"> 
         <div class="posts">
             <p>
+                <form method="post" action="/juegos">
+                    <label>Introduce el nombre de un juego: </label>
+                    <input type="text" name="juego" size="50" value="{{buscadorjuegos}}"/>
+                    <select name="categoria">
+                        {% for categoria in listacategorias -%}
+                        {% if categoria == buscadorcategorias %}
+                            <option value="{{categoria}}" selected>{{categoria}}</option>
+                        {% else-%}
+                            <option value="{{categoria}}">{{categoria}}</option>
+                        {% endif -%}
+                        {% endfor %}
+                    </select>
+                    <input type="submit" value="Buscar"/>
+                    <p>Puedes introducir un videojuego o pulsar buscar para mostrarlos todos según su categoría</p>
+                </form>
                 <table>
                     <thead>
                         <tr>
@@ -35,4 +50,4 @@
         </div>
     </div>
 </div>
-        {% endblock %}
+{% endblock %}
